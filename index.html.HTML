@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WEATHER APP
+        
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Weather</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Delhi</a></li>
+                <li><a class="dropdown-item" href="#">Lucknow</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input">
+            <button class="btn btn-outline-success" type="submit" id="search">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal"><span id="citySearch">Search Any City</span></h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="temp"></span>&deg;C</h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li> feels_like:<span id="feels_like"></span></li>
+                <li> cloud_pct:<span id="cloud_pct"></span>  </li>
+                <li> min_temp:<span id="min_temp"></span>    </li>
+
+              </ul>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">BHOPAL</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="bhopal"></span>&deg;C</h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li></li>
+                <li>feels_like:<span id="feels1_like"></span></li>
+                <li>cloud_pct:<span id="cloud1_pct"></span>  </li>
+                <li>min_temp:<span id="min1_temp"></span>    </li>
+              </ul>
+             
+              
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">HYDERABAD</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="hyderabad"></span>&deg;C</h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>feels_like:<span id="feels3_like"></span></li>
+                <li>cloud_pct:<span id="cloud3_pct"></span>  </li>
+                <li>min_temp:<span id="min3_temp"></span>    </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <h2 class="display-6 text-center mb-4 " id="spin"><div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div></h2>
+  
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 0.1%;"></th>
+              <th style="width: 20%;">cloud_pct</th>
+              <th style="width: 20%;">temp</th>
+              <th style="width: 20%;"> feels_like </th>
+              <th style="width: 20%;"> min_temp</th>
+              <th style="width: 20%;"> max_temp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Lucknow</th>
+              <td id="cloud4_pct"></td> 
+              <td id="feels4_like"></td>
+              <td id="temp4"></td>
+              <td id="min4_temp"></td>
+              <td id="max4_temp"></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Mumbai</th>
+              <td id="cloud5_pct" ></td>
+              <td id="temp5"></td>
+              <td id="feels5_like"></td>
+              <td id="min5_temp"></td>
+              <td id="max5_temp"></td>
+          </tbody>
+  
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Bangalore</th>
+              <td id="cloud6_pct">1</td>
+              <td id="feels6_like">1</td>
+              <td id="min6_temp">1</td>
+              <td id="max6_temp">1</td>
+              <td id="temp6">1</td>
+            </tr> 
+            <tr> 
+                      <th scope="row" class="text-start">Delhi</th>
+              <td id="cloud7_pct">1</td>
+              <td id="feels7_like">1</td>
+              <td id="min7_temp">1</td>
+              <td id="max7_temp">1</td>
+              <td id="temp7">1</td>
+            </tr> 
+            
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
